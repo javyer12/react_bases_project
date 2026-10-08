@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import Navbar from "./layout/Navbar";
+// import Footer from "./layout/Footer";
+
 import "./globals.css";
 
 const geistSans = Geist({
@@ -14,7 +17,8 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "App React Project",
-  description: "A simple React application built with Next.js and TypeScript, featuring a temperature conversion tool and a user-friendly interface.",
+  description:
+    "A simple React application built with Next.js and TypeScript, featuring a temperature conversion tool and a user-friendly interface.",
 };
 
 export default function RootLayout({
@@ -27,7 +31,12 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <Navbar />
+        {/* <main>{children}</main> */}
+        {children}
+        {/* <Footer /> */}
+      </body>
     </html>
   );
 }
