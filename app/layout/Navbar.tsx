@@ -20,7 +20,7 @@ export default function Navbar() {
         className="mx-auto flex max-w-5xl items-center justify-between px-6 py-4"
         aria-label="Principal"
       >
-        <Link href="/" onClick={close} className="font-semibold">
+        <Link href="/" onClick={close} className="font-semibold text-white">
           Home
         </Link>
 
@@ -57,14 +57,14 @@ export default function Navbar() {
         id="menu-movil"
         className={`grid overflow-hidden bg-paper transition-all duration-300 sm:hidden ${open ? "grid-rows-[1fr] border-t border-ink/10" : "grid-rows-[0fr]"}`}
       >
-        <ul className="min-h-0 overflow-hidden px-6">
+        <ul className="min-h-0 overflow-hidden px-6 text-white">
           {links.map((l) => (
             <li key={l.href}>
               <a
                 href={l.href}
                 onClick={close}
                 tabIndex={open ? 0 : -1}
-                className="block border-b border-ink/10 py-4 text-lg last:border-0"
+                className=" block border-b border-ink/10 py-4 text-lg last:border-0"
               >
                 {l.label}
               </a>
